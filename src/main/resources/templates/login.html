@@ -8,33 +8,31 @@
     <link rel="stylesheet" href="/webjars/bootstrap-icons/1.11.3/font/bootstrap-icons.css">
 </head>
 <body>
-    <div class="row mt-3">
-        <div class="row t-3">
-            <div class="col-ad-6 offset-3">
-                <div class="card">
-                    <div class="card-header">Authentication</div>
-                    <div class="card-body">
-                        <form method="post" th:action="@{/login}">
-                            <div class="mb-3 at-3">
-                                <label for="username" class="form-label">Username:</label>
-                                <input type="text" class="form-control" id="username" placeholder="Username" name="username">
-                            </div>
-                            <div class="mb-3 at-3">
-                                <label for="password" class="form-label">Password:</label>
-                                <input type="password" class="form-control" id="password" placeholder="Password" name="password">
-                            </div>
-                            <div class="form-check mb-3">
-                                <div class="form-check-label">
-                                    <input type="checkbox" class="form-check-input" name="remember-me"> Remember me
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Login</button>
-                        </form>
-                    </div>
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-header">Authentication</div>
+                <div class="card-body">
+                    <form method="post" th:action="@{/login}">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username:</label>
+                            <input type="text" class="form-control" id="username" placeholder="Username" name="username">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password:</label>
+                            <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                        </div>
+                        <div class="form-check mb-3">
+                            <input type="checkbox" class="form-check-input" id="remember-me" name="remember-me">
+                            <label for="remember-me" class="form-check-label">Remember me</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </body>
 </html>
-

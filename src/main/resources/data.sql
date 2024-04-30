@@ -1,0 +1,1 @@
+INSERT INTO `users` (`username`, `password`, `enabled`) VALUES ('noha0', '1234', '1');

@@ -25,8 +25,9 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>ID</th> <th>Nom</th> <th>Date</th> <th>Malade</th>
-                                <th>Score</th> <th th:if="${#authorization.expression('hasRole(''ADMIN'')')}">Delete</th><th th:if="${#authorization.expression('hasRole(''ADMIN'')')}">Edit</th>
+                                <th>ID</th> <th>Nom</th> <th>Date</th> <th>Malade</th><th>Score</th>
+                                <th th:if="${#authorization.expression('hasRole(''ADMIN'')')}">Delete</th>
+                                <th th:if="${#authorization.expression('hasRole(''ADMIN'')')}">Edit</th>
                             </tr>
                             <tr th:each="p:${ListPatients}">
                                 <td th:text="${p.id}"></td>

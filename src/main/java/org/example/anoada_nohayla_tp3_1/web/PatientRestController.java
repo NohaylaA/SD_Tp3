@@ -22,7 +22,6 @@ public class PatientRestController
 {
     @Autowired
     private PatientRepository patientRepository;
-
     @GetMapping("/user/index")
     public String index(Model model,
                        @RequestParam(name = "page",defaultValue = "0") int p,
@@ -45,20 +44,17 @@ public class PatientRestController
         patientRepository.deleteById(id);
         return "redirect:/user/index?page="+page+"&keyword="+keyword;
     }
-
     @GetMapping("/")
     public String index()
     {
         return "redirect:/user/index";
     }
-
     @GetMapping("/user/patients")
     @ResponseBody
     public List<Patient> listPatients()
     {
         return patientRepository.findAll();
     }
-
     @GetMapping("/admin/formPatients")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String formPatients(Model model)
@@ -66,7 +62,6 @@ public class PatientRestController
         model.addAttribute("patient",new Patient());
         return "formPatients";
     }
-
     @PostMapping(path="/admin/save")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String save(Model model, @Valid Patient patient,
@@ -78,7 +73,6 @@ public class PatientRestController
         patientRepository.save(patient);
         return "redirect:/user/index?page="+page+"&keyword="+keyword;
     }
-
     @GetMapping("/admin/editPatient")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String editPatient(Model model,Long id ,int page,String keyword)
@@ -90,7 +84,6 @@ public class PatientRestController
         model.addAttribute("keyword",keyword);
         return "editPatient";
     }
-
 }
 
 
